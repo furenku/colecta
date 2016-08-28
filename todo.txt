@@ -1,0 +1,44 @@
+- integrar enlaces redes sociales
+- agregar leyendas "ver mas"
+- aumentar tamaños flechas
+- arreglar color botones
+- vcenter texto festival
+- compactar blog en inicio
+X compactar horizontalmente hotlinks contacto
+- reducir peso de color naranja
+- integrar player
+
+
+
+RESPONSIVO
+
+general
+
+X icono menu debe ir a la derecha
+X menu offcanvas debe ser fixed
+X reducir temporalmente altura footer
+X colores menu offCanvas
+X tamaños iconos seccion contacto
+
+
+Inicio
+
+- tamaños indicadores
+- imagen portada
+X reducir tamaño avisos
+X inicio:festival reestructurar todo a 12
+X inicio: blog, eliminar extracto
+
+Festival
+
+
+
+
+
+
+
+
+X resolver checkout
+X mejorar estructura compra preventa
+X agrandar iconos menu festival
+X cambiar formatos fechas

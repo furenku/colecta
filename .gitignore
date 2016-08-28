@@ -1,0 +1,7 @@
+# Ignora dependencias
+# para instalarlas -> ' npm install '
+# despues -> ' bower install '
+
+node_modules/*
+bower_components/*
+LICENSE

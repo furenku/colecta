@@ -1,0 +1,538 @@
+
+// @font-face {
+//    font-family: 'Averia Serif Libre', sans-serif;
+//    src: url('fonts/googlefonts/Averia_Serif_Libre/AveriaSerifLibre-Regular.ttf');
+// }
+//
+// @font-face {
+//    font-family: 'Permanent Marker', sans-serif;
+//    src: url('fonts/googlefonts/Permanent_Marker/PermanentMarker.ttf');
+// }
+//
+// @font-face {
+//    font-family: 'Sanchez', sans-serif;
+//    src: url('fonts/googlefonts/Sanchez/Sanchez-Regular.ttf');
+// }
+//
+// @font-face {
+//    font-family: 'Special Elite', sans-serif;
+//    src: url('fonts/googlefonts/Special_Elite/SpecialElite.ttf');
+// }
+
+
+/*estilos plataforma festival offlimits*/
+* {
+  //  outline: 1px solid brown;
+}
+
+* img {
+  background-color: gray;
+}
+
+
+ul {
+   &, li {
+      margin: 0;
+      padding: 0;
+   }
+   li {
+      list-style:none;
+   }
+}
+
+// altura menus
+.h_14 {
+  display: block;
+  height: 14.2%;
+}
+
+.altura-servicios {
+  display: block;
+  height: 16.66%;
+}
+
+.altura-actividad {
+  display: block;
+  height: 29%;
+}
+
+// header
+header {
+
+  & nav {
+
+    ul {
+
+      @extend .m0;
+
+    }
+
+  }
+
+}
+
+
+.listado {
+   li {
+      line-height: 2.3em;
+   }
+}
+
+/****** LAYOUT ******/
+
+
+
+@media screen and (max-width:640px) {
+  #festival-portada {
+    height: 160vh !important;
+  }
+}
+
+
+
+#area_contenidos {
+   &>section,&>section>section {
+      margin-bottom: $spacing * 4;
+      h1 {
+         margin-top: $spacing * 2;
+         margin-bottom: $spacing * 2;
+         color: white;
+      }
+   }
+
+}
+
+
+#festival-puntos_de_venta-contenido {
+
+   ul {
+      margin: 0;
+      padding: 0;
+   }
+   li {
+      list-style:none;
+
+      // width: 33%;
+      float: left;
+      text-align: center;
+      // padding: $spacing * 3;
+
+   }
+}
+
+
+.contenido {
+
+   img {
+      margin: $spacing*4 0;
+   }
+
+}
+
+/****** COLORES ******/
+
+$acento: #FE5000;
+$acento2: #ED4000;
+
+$neutral: #888;
+$neutral_oscuro1: #333;
+$neutral_oscuro2: #222;
+$neutral_oscuro3: #060708;
+
+
+
+
+
+
+button,
+.button {
+   &,&:focus {
+      background-color: $neutral_oscuro2;
+   }
+   &:hover {
+      border-color: $acento;
+      background-color: black;
+   }
+
+  * {
+    background-color: transparent !important;
+    // background: none !important;
+    * {
+      background-color: transparent;
+      // background: none !important;
+    }
+  }
+}
+
+
+.white { color: #fff; }
+.black { color: #000; }
+.acento { color: $acento; }
+.acento2 { color: $acento2; }
+.neutral { color: $neutral !important; }
+.neutral_oscuro1 { color: $neutral_oscuro1 !important; }
+.neutral_oscuro2 { color: $neutral_oscuro2 !important; }
+.neutral_oscuro3 { color: $neutral_oscuro3 !important; }
+
+
+.white_bg { background-color: #fff !important; }
+.black_bg { background-color: #000 !important; }
+.acento_bg { background-color: $acento !important; }
+.acento2_bg { background-color: $acento2 !important; }
+.neutral_oscuro1_bg { background-color: $neutral_oscuro1 !important; }
+.neutral_oscuro2_bg { background-color: $neutral_oscuro2 !important; }
+.neutral_oscuro3_bg { background-color: $neutral_oscuro3 !important; }
+
+
+.white_bd { border: 1px solid #fff; }
+.black_bd { border: 1px solid #000; }
+.acento_bd { border: 1px solid $acento; }
+.acento2_bd { border: 1px solid $acento2; }
+.neutral_oscuro1_bd { border: 1px solid $neutral_oscuro1; }
+.neutral_oscuro2_bd { border: 1px solid $neutral_oscuro2; }
+.neutral_oscuro3_bd { border: 1px solid $neutral_oscuro3; }
+
+
+.white_hover_bg:hover { &, * { background-color: #fff !important; } }
+.black_hover_bg:hover { &, * { background-color: #000 !important; } }
+.acento_hover_bg:hover { &, * { background-color: $acento !important; } }
+.acento2_hover_bg:hover { &, * { background-color: $acento2 !important; } }
+.neutral_oscuro1_hover_bg:hover { &, * { background-color: $neutral_oscuro1 !important; } }
+.neutral_oscuro2_hover_bg:hover { &, * { background-color: $neutral_oscuro2 !important; } }
+.neutral_oscuro3_hover_bg:hover { &, * { background-color: $neutral_oscuro3 !important; } }
+
+
+.white_hover:hover { &, * { color: #fff !important; } }
+.black_hover:hover { &, * { color: #000 !important; } }
+.acento_hover:hover { &, * { color: $acento !important; } }
+.acento2_hover:hover { &, * { color: $acento2 !important; } }
+.neutral_oscuro1_hover:hover { &, * { color: $neutral_oscuro1 !important; } }
+.neutral_oscuro2_hover:hover { &, * { color: $neutral_oscuro2 !important; } }
+.neutral_oscuro3_hover:hover { &, * { color: $neutral_oscuro3 !important; } }
+
+
+.white_hover_bd:hover { &, * { border-color: #fff !important; } }
+.black_hover_bd:hover { &, * { border-color: #000 !important; } }
+.acento_hover_bd:hover { &, * { border-color: $acento !important; } }
+.acento2_hover_bd:hover { &, * { border-color: $acento2 !important; } }
+.neutral_oscuro1_hover_bd:hover { &, * { border-color: $neutral_oscuro1 !important; } }
+.neutral_oscuro2_hover_bd:hover { &, * { border-color: $neutral_oscuro2 !important; } }
+.neutral_oscuro3_hover_bd:hover { &, * { border-color: $neutral_oscuro3 !important; } }
+
+
+
+
+
+html, body {
+  background-color: $neutral_oscuro3;
+  color: white;
+}
+
+
+.fa, a {
+
+  color: $acento;
+
+  &:hover {
+    color: $acento2;
+  }
+
+}
+
+
+.menu {
+  li {
+    a {
+      transition: color 0.3s;
+      color: white !important;
+    }
+    &.current_page_item,
+    &:hover,
+    {
+
+      a {
+        color: $acento !important;
+      }
+    }
+  }
+
+}
+
+#lineup_galeria {
+  overflow: hidden;
+}
+
+
+.slick-prev {
+  left: 0 !important;
+  &:before{
+    position: absolute;
+    text-align: left;
+    top:30%;
+  }
+}
+.slick-next {
+  right: 0px !important;
+  text-align: right !important;
+  &:before{
+    position: absolute;
+    text-align: right;
+    top:30%;
+  }
+}
+
+.slick-arrow {
+  font-size: $fontXXXL !important;
+  width: 2em !important;
+  height: 2em !important;
+
+  z-index: 1001;
+  padding: 0;
+  // text-align: center;
+  &:before, &:after {
+    width: 2em !important;
+    height: 2em !important;
+
+    font-size: $fontXXXL !important;
+
+    color: #333 !important;
+  }
+
+}
+
+// colores dispolibles productos
+.color-producto-negro {
+  background-color: black;
+}
+.color-producto-gris {
+  background-color: gray;
+}
+.color-producto-azul {
+  background-color: blue;
+}
+.color-producto-rojo {
+  background-color: red;
+}
+
+
+
+
+.font1,
+div,li,p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+}
+
+.font2,
+h2,h3,h4,h5,h6,.copy {
+  font-family: 'Special Elite', cursive;
+}
+
+.font3,
+button, .button div, .button,
+h1 {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.font4 {
+
+  font-family: 'Averia Serif Libre', cursive;
+
+}
+
+
+.imgfx1 {
+   .imgLiquid {
+
+     filter: brightness(60%) contrast(115%) grayscale(85%);
+     -webkit-filter: brightness(60%) contrast(115%) grayscale(85%);
+     -moz-filter: brightness(60%) contrast(115%) grayscale(85%);
+     -o-filter: brightness(60%) contrast(115%) grayscale(85%);
+     -ms-filter: brightness(60%) contrast(115%) grayscale(85%);
+     filter: brightness(60%) contrast(115%) grayscale(85%);
+
+   }
+  &:hover {
+     .imgLiquid {
+       filter: brightness(100%) contrast(115%) grayscale(0%);
+       -webkit-filter: brightness(100%) contrast(115%) grayscale(0%);
+       -moz-filter: brightness(100%) contrast(115%) grayscale(0%);
+       -o-filter: brightness(100%) contrast(115%) grayscale(0%);
+       -ms-filter: brightness(100%) contrast(115%) grayscale(0%);
+       filter: brightness(100%) contrast(115%) grayscale(0%);
+   }
+  }
+
+}
+
+// override padding del acordion
+.accordion-content {
+    padding: 0;
+}
+
+// estilos template boletos
+#boletos-compra {
+
+  &>button {
+    border-color:$acento2;
+  }
+  &>button:hover {
+    border-color: white;
+    color: #ED4000;;
+  }
+
+
+}
+
+
+.slick-slide {
+
+    margin-right:0px;
+    margin-left:0px;
+}
+
+
+
+#checkout {
+   label {
+      color: white;
+   }
+
+   table {
+      &, * {
+         color: black;
+      }
+   }
+}
+
+
+
+.woocommerce {
+   label {
+      color: white;
+   }
+
+   .woocommerce-checkout-payment,
+   table {
+      * {
+         background-color: $neutral_oscuro2;
+         color: white;
+      }
+   }
+   .payment_box {
+      &, * {
+         background: #dfdcde !important;
+         background-color: #dfdcde !important;
+         color: black;
+      }
+   }
+   input#place_order,
+   .woocommerce #respond input#submit,
+   .woocommerce #respond input#submit.alt,
+   .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,
+   .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover
+   {
+      background-color: $acento !important;
+      background: $acento !important;
+      border-radius: 0;
+      &:hover {
+         background-color: black !important;
+         border: 1px solid $acento !important;
+         color: $acento;
+      }
+   }
+}
+
+
+
+.wpcf7-form-control.wpcf7-submit {
+   background-color: $acento !important;
+   background: $acento !important;
+   border-radius: 0;
+   border: none;
+   padding: $spacing;
+   &:hover {
+      background-color: black !important;
+      border: 1px solid $acento !important;
+      color: $acento;
+   }
+}
+
+
+.black_tapes {
+   & > * {
+      background-color: #000;
+      padding: $spacing / 2 $spacing * 1.5;
+      * {
+         padding: 0;
+         background-color: transparent;
+      }
+   }
+}
+
+textarea,
+input {
+   background-color: #fff !important;
+}
+
+
+
+.is-off-canvas-open {
+   position: fixed;
+}
+
+
+.off-canvas-wrapper, .off-canvas-wrapper-inner, .off-canvas
+{
+
+   overflow-y: hidden;
+
+}
+
+
+.txsh2 {
+   text-shadow: 3px 3px 0px black;
+}
+
+
+
+.social-sharing {
+
+   .before-sharebutton-text {
+      @extend .font2;
+      @extend .fontL;
+      @extend .pr1;
+   }
+
+   @extend .mb1;
+
+}
+
+
+
+
+.menu-menu-principal-container {
+   li {
+      color: white !important;
+   }
+}
+
+
+
+@media screen and (max-width:640px) {
+
+.mt_sm_10vh {
+   margin-top: 10vh;
+}
+
+}
+
+
+
+
+#menu-desktop {
+   nav {
+      width: 100%;
+      height: 100%;
+   }
+}
