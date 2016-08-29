@@ -44,9 +44,9 @@ $colecta = get_page_by_title("Colecta");
 
             <?php for ($i=0; $i < 20; $i++) : ?>
 
-                     <article class="obra columns small-12 medium-6 large-4 mb2">
-                        <div class="imagen columns imgLiquid imgLiquidNoFill h_35vh">
-                           <img src="http://fakeimg.pl/300x200" alt="" />
+                     <article class="obra columns small-12 medium-6 large-4 p5">
+                        <div class="imagen columns imgLiquid imgLiquidNoFill h_35vh mt2 mb2">
+                           <img src="http://fakeimg.pl/<?php echo rand(250,550); ?>x<?php echo rand(250,550); ?>" alt="" />
                         </div>
                         <div class="info columns">
                            <h6>Nombre del Artista</h6>
