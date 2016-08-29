@@ -18,7 +18,7 @@ $colecta = get_page_by_title("Colecta");
 
    </div>
 
-   <div class="columns medium-6 h_40vh p5 pt0">
+   <div class="columns medium-5 h_35vh p5 pt0">
 
       <section id="video" class="row h_100 p0">
 
@@ -28,7 +28,7 @@ $colecta = get_page_by_title("Colecta");
 
    </div>
 
-   <div class="columns medium-6 h_100 p5 pt0 text-left">
+   <div class="columns medium-7 h_100 p5 pt0 text-left">
 
       <?php echo apply_filters('the_content', $colecta -> post_content) ?>
 

@@ -8037,6 +8037,9 @@ ul li {
 .complementario_neutral_bg {
   background-color: #fed05a; }
 
+.complementario_neutral {
+  color: #fed05a; }
+
 html, body {
   background-color: #fff;
   color: #333; }
