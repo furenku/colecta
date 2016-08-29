@@ -132,7 +132,8 @@ header {
 /****** COLORES ******/
 
 $acento: #0bb1bd;
-$acento2: #ED4000;
+$acento_claro: #dbf1ff;
+$acento2: #0bc1b0;
 
 $neutral: #bbb;
 $neutral_oscuro1: #333;
@@ -146,7 +147,7 @@ $neutral_oscuro3: #060708;
 
 .white { color: #fff; }
 .black { color: #000; }
-.acento { color: $acento; }
+.acento { color: $acento !important; }
 .acento2 { color: $acento2; }
 .neutral { color: $neutral !important; }
 .neutral_oscuro1 { color: $neutral_oscuro1 !important; }
@@ -200,9 +201,14 @@ $neutral_oscuro3: #060708;
 .neutral_oscuro3_hover_bd:hover { &, * { border-color: $neutral_oscuro3 !important; } }
 
 
-.complementario_neutral_bg {
-background-color: #fe5;
+.acento_claro_bg {
+background-color: $acento_claro;
 }
+
+.complementario_neutral_bg {
+background-color: #fed05a;
+}
+
 
 
 
@@ -324,6 +330,9 @@ h1 {
 
 }
 
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Montserrat', sans-serif;
+}
 
 .imgfx1 {
    .imgLiquid {

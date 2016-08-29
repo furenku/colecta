@@ -10,7 +10,7 @@
 
       <div id="" class="vcenter h-a p5 pt0 pb0">
 
-         <h4>Rifa</h4>
+         <h4>Rifa de arte</h4>
 
          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel labore nostrum saepe.</p>
          <p>Aliquam eius libero ipsa quae animi non esse dignissimos a quidem officiis!</p>
@@ -34,25 +34,36 @@
 
 <!-- footer + player -->
 
-<footer class="w_100 expanded h_15vh p2 absDownL fixed z1k1 acento_bg white">
+<footer class="w_100 expanded h_20vh absDownL fixed z1k1 acento_claro_bg neutral_oscuro1 pl5 pr5">
 
    <div class="columns medium-6 h_20vh text-left p0">
-      <div class=" h_a h-a fontS m0 p0">
-         <div class="columns small-12 p1">
-            Depósitos a la cuenta: Banco Santander
+
+      <div class="columns medium-4 h_100 p0">
+         <div class="vcenter h_a p0">
+            <h4 class="m0 p0">
+               Depósitos:
+            </h4>
          </div>
-         <div class="columns small-12 p1">
-            Tarjeta: 5579070048443033
-         </div>
-         <div class="columns small-12 p1">
-            Nombre: Gerardo Ricardo Garcia Rodriguez
+      </div>
+
+      <div class="columns medium-8 h_20vh fontS m0 p0">
+         <div class="p5">
+            <div class="columns h_a small-12 p1">
+               Banco Santander
+            </div>
+            <div class="columns h_a small-12 p1">
+               Tarjeta: 5579070048443033
+            </div>
+            <div class="columns h_a small-12 p1">
+               Nombre: Gerardo Ricardo Garcia Rodriguez
+            </div>
          </div>
       </div>
    </div>
 
-   <div class="columns medium-6 h_100 text-right">
+   <div class="columns medium-6 h_100 text-right pr4 bold">
       <div class="vcenter h_a">
-         <h5 class="white">¡Gracias!</h5>
+         <h4 class="acento">¡Gracias!</h4>
       </div>
    </div>
 

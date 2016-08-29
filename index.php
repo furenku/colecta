@@ -8,13 +8,13 @@ get_header();
 $colecta = get_page_by_title("Colecta");
 ?>
 
-<section id="colecta" class="columns p5 pt0 pb0 mb0 text-center h_a acento_bg white">
+<section id="colecta" class="columns p5 pb0 mb0 text-center h_a acento_bg white">
 
-   <div class="columns small-12 h-a p2 pb0 pt0 text-center">
+   <div class="row expanded columns h-a p5 mb3 text-center acento2_bg">
 
-      <h1 class="">
+      <h3 class="">
          <?php echo bloginfo('name'); ?>
-      </h1>
+      </h3>
 
    </div>
 
@@ -44,14 +44,18 @@ $colecta = get_page_by_title("Colecta");
 
             <?php for ($i=0; $i < 20; $i++) : ?>
 
-                     <article class="obra columns small-12 medium-6 large-4">
+                     <article class="obra columns small-12 medium-6 large-4 mb2">
                         <div class="imagen columns imgLiquid imgLiquidNoFill h_35vh">
                            <img src="http://fakeimg.pl/300x200" alt="" />
                         </div>
                         <div class="info columns">
                            <h6>Nombre del Artista</h6>
-                           <h6>Nombre Completo de la Obra con Muchas palabras</h6>
-                           <div class="fontS"><a href="">http://url.externo.ir</a></div>
+
+                           <span>
+                              Nombre Completo de la Obra con Muchas palabras
+                           </span>
+
+                           <div class="fontS mt1"><a href="">http://url.externo.ir</a></div>
                         </div>
                      </article>
 

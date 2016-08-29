@@ -7906,10 +7906,10 @@ ul li {
   color: #000; }
 
 .acento {
-  color: #0bb1bd; }
+  color: #0bb1bd !important; }
 
 .acento2 {
-  color: #ED4000; }
+  color: #0bc1b0; }
 
 .neutral {
   color: #bbb !important; }
@@ -7933,7 +7933,7 @@ ul li {
   background-color: #0bb1bd !important; }
 
 .acento2_bg {
-  background-color: #ED4000 !important; }
+  background-color: #0bc1b0 !important; }
 
 .neutral_bg {
   background-color: #bbb !important; }
@@ -7957,7 +7957,7 @@ ul li {
   border: 1px solid #0bb1bd; }
 
 .acento2_bd {
-  border: 1px solid #ED4000; }
+  border: 1px solid #0bc1b0; }
 
 .neutral_oscuro1_bd {
   border: 1px solid #333; }
@@ -7978,7 +7978,7 @@ ul li {
   background-color: #0bb1bd !important; }
 
 .acento2_hover_bg:hover, .acento2_hover_bg:hover * {
-  background-color: #ED4000 !important; }
+  background-color: #0bc1b0 !important; }
 
 .neutral_oscuro1_hover_bg:hover, .neutral_oscuro1_hover_bg:hover * {
   background-color: #333 !important; }
@@ -7999,7 +7999,7 @@ ul li {
   color: #0bb1bd !important; }
 
 .acento2_hover:hover, .acento2_hover:hover * {
-  color: #ED4000 !important; }
+  color: #0bc1b0 !important; }
 
 .neutral_oscuro1_hover:hover, .neutral_oscuro1_hover:hover * {
   color: #333 !important; }
@@ -8020,7 +8020,7 @@ ul li {
   border-color: #0bb1bd !important; }
 
 .acento2_hover_bd:hover, .acento2_hover_bd:hover * {
-  border-color: #ED4000 !important; }
+  border-color: #0bc1b0 !important; }
 
 .neutral_oscuro1_hover_bd:hover, .neutral_oscuro1_hover_bd:hover * {
   border-color: #333 !important; }
@@ -8031,8 +8031,11 @@ ul li {
 .neutral_oscuro3_hover_bd:hover, .neutral_oscuro3_hover_bd:hover * {
   border-color: #060708 !important; }
 
+.acento_claro_bg {
+  background-color: #dbf1ff; }
+
 .complementario_neutral_bg {
-  background-color: #fe5; }
+  background-color: #fed05a; }
 
 html, body {
   background-color: #fff;
@@ -8041,7 +8044,7 @@ html, body {
 .fa, a {
   color: #0bb1bd; }
   .fa:hover, a:hover {
-    color: #ED4000; }
+    color: #0bc1b0; }
 
 .menu li a {
   transition: color 0.3s;
@@ -8109,6 +8112,9 @@ h1 {
 .font4 {
   font-family: 'Open Sans', sans-serif; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif; }
+
 .imgfx1 .imgLiquid {
   filter: brightness(60%) contrast(115%) grayscale(85%);
   -webkit-filter: brightness(60%) contrast(115%) grayscale(85%);
@@ -8129,7 +8135,7 @@ h1 {
   padding: 0; }
 
 #boletos-compra > button {
-  border-color: #ED4000; }
+  border-color: #0bc1b0; }
 
 #boletos-compra > button:hover {
   border-color: white;
