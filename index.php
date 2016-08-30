@@ -64,7 +64,7 @@ $colecta = get_page_by_title("Colecta");
 
                            <?php $url =  get_post_meta(get_the_ID(),'obra-url',true); ?>
                            <div class="fontS mt1">
-                              <a href="<?php echo $url; ?>">
+                              <a href="<?php echo $url; ?>" target="_blank">
                                  <?php echo $url; ?>
                               </a>
                            </div>
