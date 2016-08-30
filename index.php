@@ -41,26 +41,42 @@ $colecta = get_page_by_title("Colecta");
 <section id="obras" class="columns p5 pt0">
 
          <div class="small-12 columns">
+            <?php
+            $args = array( 'post_type' => 'obra', 'posts_per_page' => -1, 'orderby' => 'menu_order' );//, 'cat' => $cat_id );
+            $q = new WP_Query( $args );
+            $k = 0;
+            if( $q->have_posts() ) :
+               while ( $q->have_posts() ) :
+                  $q->the_post();
 
-            <?php for ($i=0; $i < 20; $i++) : ?>
+            ?>
 
                      <article class="obra columns small-12 medium-6 large-4 p3">
                         <div class="imagen columns imgLiquid imgLiquidNoFill h_35vh mt2 mb2  ">
-                           <img src="http://fakeimg.pl/<?php echo rand(250,550); ?>x<?php echo rand(250,550); ?>" alt="" />
+                           <?php echo get_the_post_thumbnail(); ?>
                         </div>
                         <div class="info columns">
-                           <h6>Nombre del Artista</h6>
+                           <h6><?php echo get_post_meta(get_the_ID(),'obra-artista',true); ?></h6>
 
                            <span>
-                              Nombre Completo de la Obra con Muchas palabras
+                              <?php echo get_the_title(); ?>
                            </span>
 
-                           <div class="fontS mt1"><a href="">http://url.externo.ir</a></div>
+                           <?php $url =  get_post_meta(get_the_ID(),'obra-url',true); ?>
+                           <div class="fontS mt1">
+                              <a href="<?php echo $url; ?>">
+                                 <?php echo $url; ?>
+                              </a>
+                           </div>
                         </div>
                      </article>
 
-            <?php endfor; ?>
 
+                  <?php
+                     $k++;
+                  endwhile;
+               endif;
+            ?>
          </div>
 
 </section>
