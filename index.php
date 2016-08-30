@@ -73,34 +73,45 @@ $colecta = get_page_by_title("Colecta");
       Selecciona tus números. Puedes elegir tantos como quieras.
    </p>
 
-   <div id="tickets" class="mt1 p0">
+   <div id="tickets" class="columns small-12 mt1 p0">
 
-      <?php for ($h=0; $h < 100; $h++) { ?>
 
-         <div class="columns">
+      <?php
 
-            <?php for ($i=0; $i < 5; $i++) { ?>
+      // $cat_id = get_term_by("name", "Rifa", "product_cat")->term_id;
+      $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'orderby' => 'title', 'order' => 'ASC' );//, 'cat' => $cat_id );
+      $q = new WP_Query( $args );
+      $k = 0;
+      if( $q->have_posts() ) :
+         while ( $q->have_posts() ) :
+            $q->the_post();
+      ?>
 
-            <div class="ticket-holder h_a p0 pl1 pr1 shareW fontS bold  white white_bd text-center">
+      <?php echo $k%5 === 0 ? '<div class="columns small-12 m0 p0">' : ''; ?>
+
+
+            <div data-id="<?php echo get_the_ID(); ?>" class="ticket-holder columns end">
 
                <div class="w_100 h_100 ticket button primary" style="padding:1px">
                   <div class="white_bd p4">
-                     <?php echo str_pad(($h*5)+($i+1), 3, '0', STR_PAD_LEFT); ?>
+                     <?php echo get_the_title(); ?>
                   </div>
                </div>
 
             </div>
 
-            <?php } ?>
 
-         </div>
+      <?php echo $k%5 === 4 ? '</div>' : ''; ?>
 
-      <?php } ?>
+      <?php
+         $k++;
+      endwhile;
+   endif;
+?>
 
    </div>
 
 </section>
-
 
 <?php
 
