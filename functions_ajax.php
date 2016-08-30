@@ -19,6 +19,31 @@ function add_to_cart() {
 
 }
 
+add_action( 'wp_ajax_add_array_to_cart', 'add_array_to_cart' );
+add_action( 'wp_ajax_nopriv_add_array_to_cart', 'add_array_to_cart' );
+
+function add_array_to_cart() {
+
+	$ids = $_POST['ids'];
+   $keys = array();
+
+   if( isset($_POST['ids']) && is_array( $_POST['ids'] ) ) :
+
+      foreach($ids as $id) :
+      	$key = WC()->cart->add_to_cart( $id );
+         array_push($keys,$key);
+      endforeach;
+
+   	die( json_encode( $keys ) );
+
+   else:
+
+      die;
+
+   endif;
+
+}
+
 
 add_action( 'wp_ajax_set_cart_item_quantity', 'set_cart_item_quantity' );
 add_action( 'wp_ajax_nopriv_set_cart_item_quantity', 'set_cart_item_quantity' );

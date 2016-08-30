@@ -17,10 +17,17 @@
          <p>Et voluptates eveniet, id eligendi accusantium itaque, atque in quae assumenda consequuntur.</p>
 
          <div id="boletos-compra" class="small-12 mt2">
-            <button class="button neutral_bd black white_hover small-12 columns fontRL white h_a">
-               Selecciona tus boletos
-            </button>
+            <?php
+            global $woocommerce;
+            // var_dump(count($woocommerce->cart->cart_contents));
+            // var_dump($woocommerce->cart->get_checkout_url()); ?>
+            <a href="<?php echo $woocommerce->cart->get_checkout_url(); ?>" class="w_100 h_5vh columns">
+               <button class="button neutral_bd black white_hover small-12 columns fontRL white h_a">
+                  <!-- <a href="#" class="w_100 h_5vh columns"> -->
+                  Selecciona tus boletos
+               </button>
             </a>
+
          </div>
 
       </div><!-- Avisos sticky -->

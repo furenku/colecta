@@ -90,9 +90,9 @@ $colecta = get_page_by_title("Colecta");
       <?php echo $k%5 === 0 ? '<div class="columns small-12 m0 p0">' : ''; ?>
 
 
-            <div data-id="<?php echo get_the_ID(); ?>" class="ticket-holder columns end">
+            <div class="ticket-holder columns end">
 
-               <div class="w_100 h_100 ticket button primary" style="padding:1px">
+               <div id="ticket_<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>" class="w_100 h_100 ticket button <?php echo get_post_meta(get_the_ID(),'_stock',true) != "0" ? 'primary in-stock' : 'neutral_bg out-of-stock disabled'; ?>" style="padding:1px">
                   <div class="white_bd p4">
                      <?php echo get_the_title(); ?>
                   </div>

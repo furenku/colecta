@@ -5,6 +5,9 @@
 
 var u = new FrontEndUtils();
 
+var selected_tickets = [];
+var selected_ticket_ids = [];
+
 $(document).ready(function(){
 
    setup_interaccion();
@@ -15,6 +18,8 @@ $(document).ready(function(){
    console.log("Colecta JS: ready")
 
    $(window).trigger('resize');
+
+   // clear_cart();
 
 });
 
@@ -112,10 +117,40 @@ function add_to_cart( id, callback ) {
 
 	};
 
+   $.ajax(ajaxData);
+
+}
+
+
+function add_array_to_cart( ids, callback ) {
+	var ajaxData = {
+
+		type: 'post',
+		url: ol_ajax.ajaxurl,
+		dataType: 'json',
+		data: {
+			action: 'add_array_to_cart',
+			ids: ids
+		},
+		success: function(keys){
+
+         if( typeof(callback) != "undefined" ) {
+				callback( keys );
+			}
+
+		}
+
+
+	};
+
 
 	$.ajax(ajaxData);
 
 }
+
+
+
+
 
 
 function set_cart_item_quantity( key, quantity, callback ) {
@@ -178,33 +213,21 @@ function clear_cart() {
 function tickets() {
 
 
-   $('.ticket').click(function(){
+   $('.ticket.in-stock').click(function(){
       if( ! $(this).hasClass('selected') ) {
 
-         console.log("selected ticket!")
-         $(this).addClass('success').addClass('selected').removeClass('primary')
+         var ticket = $(this);
+
+         ticket.addClass('success').addClass('selected').removeClass('primary')
+
+
+         var ticket_id  = ticket.attr('data-id');
+
+         selected_tickets.push( ticket_id );
+         selected_ticket_ids.push( ticket.attr('id') );
 
 
 
-         $('#boletos-compra a').click(function(e){
-            var preventa_id = "56";
-            var cantidad = $('#boletos-compra input').val();
-            var link = $(this);
-            // clear_cart();
-            add_to_cart( preventa_id, function( key ){
-
-               currentKey = key;
-               set_cart_item_quantity( key, cantidad , function( result ) {
-
-                  setTimeout(function(){
-                     window.location = link.attr('href');
-                  },1000)
-               } );
-             })
-
-             e.preventDefault();
-             e.stopPropagation();
-         })
       }
       else {
          $(this).removeClass('selected success').addClass('primary');
@@ -228,5 +251,23 @@ function tickets() {
 
       }
    })
+
+   var ticket_id = 0;
+   $('#boletos-compra button').click(function(){
+
+      add_array_to_cart( selected_tickets, function(keys) {
+
+         for(i in keys){
+            key = keys[i];
+            id = selected_ticket_ids[i];
+            $('#'+id).attr('data-key',key);
+            console.log( "se añadió ticket a carrito: ", id, key );
+         }
+         selected_tickets = [];
+         selected_ticket_ids = [];
+      });
+
+   });
+
 
 }
