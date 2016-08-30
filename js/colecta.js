@@ -11,6 +11,9 @@ $(document).ready(function(){
 
    setup_utils();
 
+   tickets();
+   console.log("Colecta JS: ready")
+
    $(window).trigger('resize');
 
 });
@@ -57,31 +60,31 @@ function setup_utils() {
 function setup_interaccion() {
    console.log( $('#boletos-compra input') );
 
-   $('#boletos-compra input').val(1);
-
-   $('#boletos-compra input').change(function(){
-      $('#boletos-compra button').html("Compra "+$(this).val());
-   });
-
-   $('#boletos-compra a').click(function(e){
-      var preventa_id = "56";
-      var cantidad = $('#boletos-compra input').val();
-      var link = $(this);
-      // clear_cart();
-      add_to_cart( preventa_id, function( key ){
-
-         currentKey = key;
-         set_cart_item_quantity( key, cantidad , function( result ) {
-
-            setTimeout(function(){
-               window.location = link.attr('href');
-            },1000)
-         } );
-       })
-
-       e.preventDefault();
-       e.stopPropagation();
-   })
+   // $('#boletos-compra input').val(1);
+   //
+   // $('#boletos-compra input').change(function(){
+   //    $('#boletos-compra button').html("Compra "+$(this).val());
+   // });
+   //
+   // $('#boletos-compra a').click(function(e){
+   //    var preventa_id = "56";
+   //    var cantidad = $('#boletos-compra input').val();
+   //    var link = $(this);
+   //    // clear_cart();
+   //    add_to_cart( preventa_id, function( key ){
+   //
+   //       currentKey = key;
+   //       set_cart_item_quantity( key, cantidad , function( result ) {
+   //
+   //          setTimeout(function(){
+   //             window.location = link.attr('href');
+   //          },1000)
+   //       } );
+   //     })
+   //
+   //     e.preventDefault();
+   //     e.stopPropagation();
+   // })
 
 }
 
@@ -162,5 +165,68 @@ function clear_cart() {
 
 	$.ajax(ajaxData);
 
+
+}
+
+
+
+
+
+
+
+
+function tickets() {
+
+
+   $('.ticket').click(function(){
+      if( ! $(this).hasClass('selected') ) {
+
+         console.log("selected ticket!")
+         $(this).addClass('success').addClass('selected').removeClass('primary')
+
+
+
+         $('#boletos-compra a').click(function(e){
+            var preventa_id = "56";
+            var cantidad = $('#boletos-compra input').val();
+            var link = $(this);
+            // clear_cart();
+            add_to_cart( preventa_id, function( key ){
+
+               currentKey = key;
+               set_cart_item_quantity( key, cantidad , function( result ) {
+
+                  setTimeout(function(){
+                     window.location = link.attr('href');
+                  },1000)
+               } );
+             })
+
+             e.preventDefault();
+             e.stopPropagation();
+         })
+      }
+      else {
+         $(this).removeClass('selected success').addClass('primary');
+      }
+
+      var num_selected = $('.ticket.selected').length;
+      if( num_selected > 0 ) {
+         $('#boletos-compra button')
+         .html( "Compra " + num_selected )
+         .addClass( "listo-para-comprar" )
+         .addClass("fontRXL success")
+         .removeClass("fontRL");
+      } else {
+         $('#boletos-compra button')
+         .html( "Selecciona tus boletos" )
+         .removeClass( "listo-para-comprar" )
+         .addClass("fontRL neutral_bd")
+         .removeClass("fontRXL success");
+
+         $('#boletos-compra button').removeClass( "listo-para-comprar" );
+
+      }
+   })
 
 }

@@ -17,10 +17,8 @@
          <p>Et voluptates eveniet, id eligendi accusantium itaque, atque in quae assumenda consequuntur.</p>
 
          <div id="boletos-compra" class="small-12 mt2">
-            <input class="small-4 columns h_10vh small-center  text-center fontRXXL" type="number" min="1" max="10" name="numero-boletos" placeholder="1">
-            <a href="<?php echo get_the_permalink( get_page_by_title('Pago') -> ID ); ?>">
-            <button class="button success black white_hover small-8 columns fontRXL white h_10vh">
-               Compra 1
+            <button class="button neutral_bd black white_hover small-12 columns fontRL white h_a">
+               Selecciona tus boletos
             </button>
             </a>
          </div>

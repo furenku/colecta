@@ -65,6 +65,42 @@ $colecta = get_page_by_title("Colecta");
 
 </section>
 
+<section id="rifa" class="columns p5 h_a">
+
+   <h2>Rifa:</h2>
+
+   <p class="fontL neutral mt1 mb2">
+      Selecciona tus números. Puedes elegir tantos como quieras.
+   </p>
+
+   <div id="tickets" class="mt1 p0">
+
+      <?php for ($h=0; $h < 100; $h++) { ?>
+
+         <div class="columns">
+
+            <?php for ($i=0; $i < 5; $i++) { ?>
+
+            <div class="ticket-holder h_a p0 pl1 pr1 shareW fontS bold  white white_bd text-center">
+
+               <div class="w_100 h_100 ticket button primary" style="padding:1px">
+                  <div class="white_bd p4">
+                     <?php echo str_pad(($h*5)+($i+1), 3, '0', STR_PAD_LEFT); ?>
+                  </div>
+               </div>
+
+            </div>
+
+            <?php } ?>
+
+         </div>
+
+      <?php } ?>
+
+   </div>
+
+</section>
+
 
 <?php
 
