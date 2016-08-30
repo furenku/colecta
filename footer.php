@@ -3,7 +3,7 @@
 
 </main><!-- #main -->
 
-
+<?php if( ! is_page("Checkout") && ! is_page("Cart") ) : ?>
 <div id="avisos-destacados" class="columns medium-8 large-3 h_85vh h_sm_15vh p0" data-sticky-container>
 
    <div class="columns p0 h_85vh h_sm_15vh sticky complementario_neutral_bg" data-sticky data-margin-top="0" data-anchor="area_contenidos" data-sticky-on="small">
@@ -35,6 +35,8 @@
    </div>
 
 </div>
+
+<?php endif; ?>
 
 
 <!-- footer + player -->

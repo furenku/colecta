@@ -253,20 +253,30 @@ function tickets() {
    })
 
    var ticket_id = 0;
-   $('#boletos-compra button').click(function(){
+   $('#boletos-compra a').click(function(e){
+      console.log("link")
+      if( $(this).find('button').hasClass('listo-para-comprar') ) {
 
-      add_array_to_cart( selected_tickets, function(keys) {
+         add_array_to_cart( selected_tickets, function(keys) {
 
-         for(i in keys){
-            key = keys[i];
-            id = selected_ticket_ids[i];
-            $('#'+id).attr('data-key',key);
-            console.log( "se añadió ticket a carrito: ", id, key );
-         }
-         selected_tickets = [];
-         selected_ticket_ids = [];
-      });
+            for(i in keys){
+               key = keys[i];
+               id = selected_ticket_ids[i];
+               $('#'+id).attr('data-key',key);
+               console.log( "se añadió ticket a carrito: ", id, key );
+            }
+            selected_tickets = [];
+            selected_ticket_ids = [];
+         });
 
+      } else {
+         e.preventDefault();
+         e.stopPropagation();
+         $('body,html').animate({
+            scrollTop: $('#rifa').offset().top
+         }, 1500 );
+         return false;
+      }
    });
 
 
