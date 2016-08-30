@@ -9,12 +9,12 @@
    <div class="columns p0 h_85vh h_sm_15vh sticky complementario_neutral_bg" data-sticky data-margin-top="0" data-anchor="area_contenidos" data-sticky-on="small">
 
       <div id="" class="vcenter h-a p5 pt0 pb0 pr3">
-
+         <?php $rifa = get_page_by_title("Rifa"); ?>
          <h4 class="mb1">Rifa de arte</h4>
 
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel labore nostrum saepe.</p>
-         <p>Aliquam eius libero ipsa quae animi non esse dignissimos a quidem officiis!</p>
-         <p>Et voluptates eveniet, id eligendi accusantium itaque, atque in quae assumenda consequuntur.</p>
+         <div class="contenido">
+            <?php echo apply_filters('the_content', $rifa->post_content); ?>
+         </div>
 
          <div id="boletos-compra" class="small-12 mt2">
             <?php
