@@ -20,7 +20,7 @@
 
       </div>
 
-      <div id="boletos-compra" class="small-8 small-offset-2 mt1">
+      <div id="boletos-compra" class="small-8 small-offset-2">
          <!-- <div id="boletos-compra" class="small-12 mt2" data-sticky-container> -->
          <!-- <div class="columns sticky" data-sticky data-sticky-on="[small]"> -->
          <?php
