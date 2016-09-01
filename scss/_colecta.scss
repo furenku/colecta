@@ -485,3 +485,20 @@ h1,h2,h3,h4,h5,h6 {
    display: inline-block;
    clear: none;
 }
+
+
+
+
+
+
+#rifa-sidebar {
+   .is-stuck {
+      @media screen and (max-width:1024px) {
+         height: 15vh;
+         .titulo, .contenido {
+            display: none;
+         }
+      }
+   }
+
+}

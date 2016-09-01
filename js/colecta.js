@@ -21,6 +21,14 @@ $(document).ready(function(){
 
    // clear_cart();
 
+   if( $(window).width() < 768 ) {
+      $('#colecta').detach().insertBefore('#area_contenidos');
+      $('#rifa-sidebar').detach().insertBefore('#area_contenidos');
+      newDiv = $('<div>');
+      newDiv.addClass('columns h-70-v complementario_neutral_bg p_sm_2');
+      $('#rifa-sidebar .responsive-move').removeClass('vcenter').addClass('m0').detach().appendTo( newDiv );
+      newDiv.insertBefore('#rifa-sidebar');
+   }
 });
 
 

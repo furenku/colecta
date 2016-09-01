@@ -5,7 +5,6 @@ Template Name: Inicio
 
 get_header();
 
-$colecta = get_page_by_title("Colecta");
 ?>
 
 <section id="colecta" class="columns p5 pb0 mb0 text-center h_a acento_bg white">
@@ -28,7 +27,7 @@ $colecta = get_page_by_title("Colecta");
 
    </div>
 
-   <div class="columns medium-7 h_100 p5 pt0 text-left">
+   <div class="columns medium-7 h_a p5 pt0 p-sm-2 text-left">
 
       <?php echo apply_filters('the_content', $colecta -> post_content) ?>
 
@@ -40,48 +39,48 @@ $colecta = get_page_by_title("Colecta");
 
 <section id="obras" class="columns p5 pt0">
 
-         <div class="small-12 columns">
+   <div class="small-12 columns">
+      <?php
+      $args = array( 'post_type' => 'obra', 'posts_per_page' => -1, 'orderby' => 'menu_order' );//, 'cat' => $cat_id );
+      $q = new WP_Query( $args );
+      $k = 0;
+      if( $q->have_posts() ) :
+         while ( $q->have_posts() ) :
+            $q->the_post();
+
+            ?>
+
+            <article class="obra columns small-12 medium-6 large-4 p3">
+               <div class="imagen columns imgLiquid imgLiquidNoFill h_35vh mt2 mb2  ">
+                  <?php echo get_the_post_thumbnail( get_the_ID(), 'thumb' ); ?>
+               </div>
+               <div class="info columns">
+                  <h6><?php echo get_post_meta(get_the_ID(),'obra-artista',true); ?></h6>
+
+                  <span>
+                     <?php echo get_the_title(); ?>
+                  </span>
+
+                  <?php $url =  get_post_meta(get_the_ID(),'obra-url',true); ?>
+                  <div class="fontS mt1">
+                     <a href="<?php echo $url; ?>" target="_blank">
+                        <?php echo $url; ?>
+                     </a>
+                  </div>
+               </div>
+            </article>
+
+
             <?php
-            $args = array( 'post_type' => 'obra', 'posts_per_page' => -1, 'orderby' => 'menu_order' );//, 'cat' => $cat_id );
-            $q = new WP_Query( $args );
-            $k = 0;
-            if( $q->have_posts() ) :
-               while ( $q->have_posts() ) :
-                  $q->the_post();
-
-            ?>
-
-                     <article class="obra columns small-12 medium-6 large-4 p3">
-                        <div class="imagen columns imgLiquid imgLiquidNoFill h_35vh mt2 mb2  ">
-                           <?php echo get_the_post_thumbnail( get_the_ID(), 'thumb' ); ?>
-                        </div>
-                        <div class="info columns">
-                           <h6><?php echo get_post_meta(get_the_ID(),'obra-artista',true); ?></h6>
-
-                           <span>
-                              <?php echo get_the_title(); ?>
-                           </span>
-
-                           <?php $url =  get_post_meta(get_the_ID(),'obra-url',true); ?>
-                           <div class="fontS mt1">
-                              <a href="<?php echo $url; ?>" target="_blank">
-                                 <?php echo $url; ?>
-                              </a>
-                           </div>
-                        </div>
-                     </article>
-
-
-                  <?php
-                     $k++;
-                  endwhile;
-               endif;
-            ?>
-         </div>
+            $k++;
+         endwhile;
+      endif;
+      ?>
+   </div>
 
 </section>
 
-<section id="rifa" class="columns p5 h_a">
+<section id="rifa" class="columns p5 p_sm_0 h_a">
 
    <h2>Rifa:</h2>
 
@@ -101,34 +100,34 @@ $colecta = get_page_by_title("Colecta");
       if( $q->have_posts() ) :
          while ( $q->have_posts() ) :
             $q->the_post();
-      ?>
+            ?>
 
-      <?php echo $k%5 === 0 ? '<div class="columns small-12 m0 p0">' : ''; ?>
+            <?php echo $k%5 === 0 ? '<div class="columns small-12 m0 p0">' : ''; ?>
 
 
-            <div class="ticket-holder columns end">
+               <div class="ticket-holder p1 columns end">
 
-               <div id="ticket_<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>" class="w_100 h_100 ticket button <?php echo get_post_meta(get_the_ID(),'_stock',true) != "0" ? 'primary in-stock' : 'neutral_bg out-of-stock disabled'; ?>" style="padding:1px">
-                  <div class="white_bd p4">
-                     <?php echo get_the_title(); ?>
+                  <div id="ticket_<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>" class="w_100 h_100 ticket button <?php echo get_post_meta(get_the_ID(),'_stock',true) != "0" ? 'primary in-stock' : 'neutral_bg out-of-stock disabled'; ?>" style="padding:1px">
+                     <div class="white_bd p4">
+                        <?php echo get_the_title(); ?>
+                     </div>
                   </div>
+
                </div>
 
-            </div>
 
+               <?php echo $k%5 === 4 ? '</div>' : ''; ?>
 
-      <?php echo $k%5 === 4 ? '</div>' : ''; ?>
+               <?php
+               $k++;
+            endwhile;
+         endif;
+         ?>
 
-      <?php
-         $k++;
-      endwhile;
-   endif;
-?>
+      </div>
 
-   </div>
+   </section>
 
-</section>
+   <?php
 
-<?php
-
-get_footer();
+   get_footer();

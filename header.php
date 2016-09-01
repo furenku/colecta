@@ -117,51 +117,13 @@
 <body>
 
 
-   <?php if( ! is_page("Checkout") && ! is_page("Pago") && ! is_page("Cart") ) : ?>
-   <div id="avisos-destacados" class="columns medium-4 large-3 medium-push-8 large-push-9 small-pull-12 h_85vh h_sm_15vh p0" data-sticky-container>
-
-      <div class="columns p0 h_85vh h_sm_15vh sticky complementario_neutral_bg" data-sticky data-margin-top="0" data-anchor="area_contenidos" data-sticky-on="large">
-
-         <div id="" class="vcenter h-a p5 pt0 pb0 pr3">
-            <?php $rifa = get_page_by_title("Rifa"); ?>
-            <h4 class="mb1">Rifa de arte</h4>
-
-            <div class="contenido">
-               <?php echo apply_filters('the_content', $rifa->post_content); ?>
-            </div>
-
-            <div id="boletos-compra" class="small-12 mt2">
-            <!-- <div id="boletos-compra" class="small-12 mt2" data-sticky-container> -->
-               <!-- <div class="columns sticky" data-sticky data-sticky-on="[small]"> -->
-                  <?php
-                  global $woocommerce;
-                  // var_dump(count($woocommerce->cart->cart_contents));
-                  // var_dump($woocommerce->cart->get_checkout_url()); ?>
-                  <a href="<?php echo $woocommerce->cart->get_checkout_url(); ?>" class="w_100 h_5vh columns">
-                     <button class="button neutral_bd black white_hover small-12 columns fontRL white h_a">
-                        <!-- <a href="#" class="w_100 h_5vh columns"> -->
-                        Selecciona tus boletos
-                     </button>
-                  </a>
-               <!-- </div> -->
-
-            </div>
-
-         </div><!-- Avisos sticky -->
-
-      </div>
-
-   </div>
-
-   <?php endif; ?>
-
-
-
-
+   <?php
+   $colecta = get_page_by_title("Colecta");
+   ?>
 
 
    <!-- main -->
-   <main id="main" class="columns medium-8 large-9  medium-pull-4 large-pull-3 small-push-12 h-a p0 m0">
+   <main id="main" class="columns medium-8 large-9   h-a p0 m0">
 
       <div id="contenido-general" class="columns ha p0">
          <div id="area_contenidos" class="small-12 small-pull-12 p0 columns ha pb5">

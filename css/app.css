@@ -8186,3 +8186,9 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   display: inline-block;
   clear: none; }
+
+@media screen and (max-width: 1024px) {
+  #rifa-sidebar .is-stuck {
+    height: 15vh; }
+    #rifa-sidebar .is-stuck .titulo, #rifa-sidebar .is-stuck .contenido {
+      display: none; } }
