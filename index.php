@@ -5,6 +5,9 @@ Template Name: Inicio
 
 get_header();
 
+
+$colecta = get_page_by_title("Colecta");
+
 ?>
 
 <section id="colecta" class="columns p5 pb0 mb0 text-center h_a acento_bg white">
@@ -27,7 +30,7 @@ get_header();
 
    </div>
 
-   <div class="columns medium-7 h_a p5 pt0 p-sm-2 text-left">
+   <div class="columns medium-7 h_a p5 pt0 p_sm_2 text-left">
 
       <?php echo apply_filters('the_content', $colecta -> post_content) ?>
 
@@ -108,7 +111,7 @@ get_header();
                <div class="ticket-holder p1 columns end">
 
                   <div id="ticket_<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>" class="w_100 h_100 ticket button <?php echo get_post_meta(get_the_ID(),'_stock',true) != "0" ? 'primary in-stock' : 'neutral_bg out-of-stock disabled'; ?>" style="padding:1px">
-                     <div class="white_bd p4">
+                     <div class="white_bd p4 p_sm_0 pt_sm_2 pb_sm_2">
                         <?php echo get_the_title(); ?>
                      </div>
                   </div>

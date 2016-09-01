@@ -246,14 +246,14 @@ function tickets() {
          $('#boletos-compra button')
          .html( "Compra " + num_selected )
          .addClass( "listo-para-comprar" )
-         .addClass("fontRXL success")
-         .removeClass("fontRL");
+         .addClass("fontXL success")
+         .removeClass("fontL");
       } else {
          $('#boletos-compra button')
          .html( "Selecciona tus boletos" )
          .removeClass( "listo-para-comprar" )
-         .addClass("fontRL neutral_bd")
-         .removeClass("fontRXL success");
+         .addClass("fontL neutral_bd")
+         .removeClass("fontXL success");
 
          $('#boletos-compra button').removeClass( "listo-para-comprar" );
 

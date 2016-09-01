@@ -117,10 +117,6 @@
 <body>
 
 
-   <?php
-   $colecta = get_page_by_title("Colecta");
-   ?>
-
 
    <!-- main -->
    <main id="main" class="columns medium-8 large-9   h-a p0 m0">
