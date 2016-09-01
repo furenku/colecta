@@ -222,14 +222,15 @@ function tickets() {
 
 
    $('.ticket.in-stock').click(function(){
+      var ticket = $(this);
+      var ticket_id  = ticket.attr('data-id');
+
       if( ! $(this).hasClass('selected') ) {
 
-         var ticket = $(this);
 
          ticket.addClass('success').addClass('selected').removeClass('primary')
 
 
-         var ticket_id  = ticket.attr('data-id');
 
          selected_tickets.push( ticket_id );
          selected_ticket_ids.push( ticket.attr('id') );
@@ -239,6 +240,18 @@ function tickets() {
       }
       else {
          $(this).removeClass('selected success').addClass('primary');
+
+console.log( selected_tickets );
+         selected_tickets.splice(
+
+            selected_tickets.indexOf( ticket_id ),
+            1
+         );
+console.log( selected_tickets );
+         selected_ticket_ids.splice(
+            selected_ticket_ids.indexOf( $(this).attr('id') ),
+            1
+         );
       }
 
       var num_selected = $('.ticket.selected').length;
