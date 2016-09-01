@@ -29,6 +29,11 @@ $(document).ready(function(){
       $('#rifa-sidebar .responsive-move').removeClass('vcenter').addClass('m0').detach().appendTo( newDiv );
       newDiv.insertBefore('#rifa-sidebar');
    }
+
+
+
+   if( $('#rifa-sidebar').length != 0 )
+      clear_cart();
 });
 
 
