@@ -10,7 +10,7 @@
 
    <div id="rifa-sticky" class="columns p0 h_85vh h_sm_15vh sticky complementario_neutral_bg" data-sticky data-margin-top="0" data-anchor="area_contenidos" data-sticky-on="small">
 
-      <div id="" class="titulo responsive-move h-a p5 pr3 p_sm_2 pt2 pt_sm_0 pb0 ">
+      <div id="" class="titulo responsive-move h-a p5 pr3 p_sm_2 pt2 pt_sm_0 pb0  mt2">
          <?php $rifa = get_page_by_title("Rifa"); ?>
          <h4 class="mb1">Rifa de arte</h4>
 
@@ -20,7 +20,7 @@
 
       </div>
 
-      <div id="boletos-compra" class="small-8 small-offset-2">
+      <div id="boletos-compra" class="small-8 small-offset-2 mt0 pt0">
          <!-- <div id="boletos-compra" class="small-12 mt2" data-sticky-container> -->
          <!-- <div class="columns sticky" data-sticky data-sticky-on="[small]"> -->
          <?php
@@ -28,7 +28,7 @@
          // var_dump(count($woocommerce->cart->cart_contents));
          // var_dump($woocommerce->cart->get_checkout_url()); ?>
          <a href="<?php echo $woocommerce->cart->get_checkout_url(); ?>" class="w_100 h_5vh columns">
-            <button class="button neutral_bd black white_hover columns  fontL white h_a">
+            <button class="button neutral_bd black white_hover columns  fontL font_sm_M white h_a">
                <!-- <a href="#" class="w_100 h_5vh columns"> -->
                Selecciona tus boletos
             </button>
