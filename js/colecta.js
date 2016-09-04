@@ -70,7 +70,19 @@ function setup_utils() {
    });
 
 
-   var bLazy = new Blazy();
+   var bLazy = new Blazy({
+      success: function(img) {
+         if(img.parent().hasClass('imgLiquid') ){
+         if(!img.parent().hasClass('imgLiquidNoFill') ){
+            img.parent().imgLiquid();
+         } else {
+            img.parent().imgLiquid({
+               fill:false
+            });
+         }
+         }
+      }
+   });
 
 }
 
