@@ -63,20 +63,23 @@ function setup_utils() {
    u.vcenter();
    u.shareW();
 
-   //imgLiquid
-   $(".imgLiquidFill").imgLiquid();
-   $('.imgLiquid.imgLiquidNoFill').imgLiquid({
-      fill:false
-   });
+   // imgLiquid
+   // $(".imgLiquidFill").imgLiquid();
+   // $('.imgLiquid.imgLiquidNoFill').imgLiquid({
+   //    fill:false
+   // });
 
 
    var bLazy = new Blazy({
       success: function(img) {
-         if(img.parent().hasClass('imgLiquid') ){
-         if(!img.parent().hasClass('imgLiquidNoFill') ){
-            img.parent().imgLiquid();
+
+         console.log(img);
+         jimg = $(img);
+         if(jimg.parent().hasClass('imgLiquid') ){
+         if(!jimg.parent().hasClass('imgLiquidNoFill') ){
+            jimg.parent().imgLiquid();
          } else {
-            img.parent().imgLiquid({
+            jimg.parent().imgLiquid({
                fill:false
             });
          }
