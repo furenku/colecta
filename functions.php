@@ -37,13 +37,13 @@ function ol_enqueue_scripts() {
   wp_enqueue_script( 'blazy-js', get_stylesheet_directory_uri() . '/bower_components/bLazy/blazy.min.js',array(),'0.1', true );
   wp_enqueue_script( 'app-js', get_stylesheet_directory_uri() . '/js/app.js',array('foundation-js') );
 
-  //  wp_enqueue_script( 'colecta-js', get_stylesheet_directory_uri() . '/js/colecta.js',array('jquery'),'0.01', true );
-  //
-  // wp_localize_script( 'colecta-js', 'ol_ajax',
-  //     array(
-  //          'ajaxurl' => admin_url( 'admin-ajax.php' ),
-  //     )
-  // );
+   wp_enqueue_script( 'colecta-js', get_stylesheet_directory_uri() . '/js/colecta.js',array('jquery'),'0.01', true );
+
+  wp_localize_script( 'colecta-js', 'ol_ajax',
+      array(
+           'ajaxurl' => admin_url( 'admin-ajax.php' ),
+      )
+  );
 
   //
   if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
@@ -133,9 +133,11 @@ if ( $attachment_id ) {
 $src = wp_get_attachment_image_src( $attachment_id, $size );
 if ($src) {
 $img = get_the_post_thumbnail( $post_id, $size, array(
-'class' => 'lazy',
-'data-original' => $src[0],
-'src' => 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
+'class' => 'b-lazy',
+'data-src' => $src[0],
+'src' => 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
+'alt'=>get_the_title()
+
 ) );
 return $img; // returns image tag string or '' (empty string)
 }
