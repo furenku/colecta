@@ -70,6 +70,7 @@ function setup_utils() {
    });
 
 
+   var bLazy = new Blazy();
 
 }
 
