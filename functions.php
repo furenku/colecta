@@ -31,18 +31,19 @@ function ol_enqueue_scripts() {
   wp_enqueue_script( 'jquery', get_stylesheet_directory_uri() . '/bower_components/jquery/dist/jquery.js',array(),'2', false );
   wp_enqueue_script( 'whatinput-js', get_stylesheet_directory_uri() . '/bower_components/what-input/what-input.js',array('jquery'),'0.99', true );
   wp_enqueue_script( 'foundation-js', get_stylesheet_directory_uri() . '/bower_components/foundation-sites/dist/foundation.js',array(),'0.99', true );
-  wp_enqueue_script( 'app-js', get_stylesheet_directory_uri() . '/js/app.js',array('foundation-js') );
   wp_enqueue_script( 'img-js', get_stylesheet_directory_uri() . '/bower_components/imgLiquid/js/imgLiquid.js',array(),'0.99', true );
   wp_enqueue_script( 'slick-js', get_stylesheet_directory_uri() . '/bower_components/slick-carousel/slick/slick.js',array(),'0.99', true );
   wp_enqueue_script( 'front-js', get_stylesheet_directory_uri() . '/js/frontendutils.js',array(),'0.1', true );
+  wp_enqueue_script( 'blazy-js', get_stylesheet_directory_uri() . '/bower_components/bLazy/blazy.min.js',array(),'0.1', true );
+  wp_enqueue_script( 'app-js', get_stylesheet_directory_uri() . '/js/app.js',array('foundation-js') );
 
-   wp_enqueue_script( 'colecta-js', get_stylesheet_directory_uri() . '/js/colecta.js',array('jquery'),'0.01', true );
-
-  wp_localize_script( 'colecta-js', 'ol_ajax',
-      array(
-           'ajaxurl' => admin_url( 'admin-ajax.php' ),
-      )
-  );
+  //  wp_enqueue_script( 'colecta-js', get_stylesheet_directory_uri() . '/js/colecta.js',array('jquery'),'0.01', true );
+  //
+  // wp_localize_script( 'colecta-js', 'ol_ajax',
+  //     array(
+  //          'ajaxurl' => admin_url( 'admin-ajax.php' ),
+  //     )
+  // );
 
   //
   if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
@@ -119,3 +120,26 @@ add_theme_support( 'woocommerce' ); }
 
 
 add_filter('woocommerce_enable_order_notes_field', '__return_false');
+
+
+
+
+// Rewrite of "get_the_post_thumbnail" for compatibility with jQuery LazyLoad plugin
+function get_lazyload_thumbnail( $post_id = false, $size = 'full' ) {
+if ( $post_id ) {
+// Get the id of the attachment
+$attachment_id = get_post_thumbnail_id( $post_id );
+if ( $attachment_id ) {
+$src = wp_get_attachment_image_src( $attachment_id, $size );
+if ($src) {
+$img = get_the_post_thumbnail( $post_id, $size, array(
+'class' => 'lazy',
+'data-original' => $src[0],
+'src' => 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
+) );
+return $img; // returns image tag string or '' (empty string)
+}
+}
+}
+return false; // missing either: post_id, attachment_id, or src
+}

@@ -55,7 +55,9 @@ $colecta = get_page_by_title("Colecta");
 
             <article class="obra columns small-12 medium-6 large-4 p3">
                <div class="imagen columns imgLiquid imgLiquidNoFill h_35vh mt2 mb2  ">
-                  <?php echo get_the_post_thumbnail( get_the_ID(), 'thumb' ); ?>
+                  <?php
+                  echo get_lazyload_thumbnail( get_the_ID(), 'post-thumbnail' );
+                  ?>
                </div>
                <div class="info columns">
                   <h6><?php echo get_post_meta(get_the_ID(),'obra-artista',true); ?></h6>
