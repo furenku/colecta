@@ -30,7 +30,7 @@
          <a href="<?php echo $woocommerce->cart->get_checkout_url(); ?>" class="w_100 h_5vh columns">
             <button class="button neutral_bd black white_hover columns  fontL font_sm_M white h_a">
                <!-- <a href="#" class="w_100 h_5vh columns"> -->
-               Selecciona tus boletos
+               Selecciona tus boletos y después haz click en el botón "Comprar". Cada uno cuesta $200.
             </button>
          </a>
          <!-- </div> -->
@@ -66,6 +66,10 @@
          <div class="p5 p_sm_0">
             <div class="columns h_a small-12 p0 font_sm_XS text-right medium-text-left ">
                Banco Santander
+            </div>
+            <div class="columns h_a small-12 p0 font_sm_XS text-right medium-text-left ">
+               CLABE: 014320605514406203
+            </div>
             </div>
             <div class="columns h_a small-12 p0 font_sm_XS text-right medium-text-left ">
                Tarjeta: 5579070048443033

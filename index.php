@@ -53,7 +53,7 @@ $colecta = get_page_by_title("Colecta");
 
             ?>
 
-            <article class="obra columns small-12 medium-6 large-4 p3">
+            <article class="obra columns small-12 medium-6 large-4 h_80vh end p3">
                <div class="imagen columns imgLiquid imgLiquidNoFill h_35vh mt2 mb2  ">
                   <?php
                   echo get_lazyload_thumbnail( get_the_ID(), 'post-thumbnail' );
@@ -67,7 +67,7 @@ $colecta = get_page_by_title("Colecta");
                   </span>
 
                   <?php $url =  get_post_meta(get_the_ID(),'obra-url',true); ?>
-                  <div class="fontS mt1">
+                  <div class="fontS mt1 mb1">
                      <a href="<?php echo $url; ?>" target="_blank">
                         <?php echo $url; ?>
                      </a>

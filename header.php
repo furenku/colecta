@@ -17,34 +17,20 @@
 
 
    <?php
-   if(have_posts()):
-      while(have_posts()):
-         the_post();
+   $colecta = get_page_by_title("Colecta");
 
          $name = get_bloginfo('name');
 
-         $twitter_user = '@offlimitsmx';
+         $twitter_user = '@microhom';
 
-         if( is_single() ) {
-            $name = $name . ': ' . get_the_title();
-            $description = apply_filters( 'the_excerpt', get_the_excerpt() );
-            $url = get_the_permalink( get_the_ID() );
-            $thumb_id = get_post_thumbnail_id();
-            $thumb_url = wp_get_attachment_image_src($thumb_id,'large', true);
+         $name = $name . ': ' . $colecta->post_title;
 
-         } else {
-            $name = $name . ': ' . get_the_title();
+         $description = $colecta->post_excerpt;
+         // $url = get_bloginfo('url');
+         $url = site_url();
 
-            $description = get_bloginfo('description');
-            // $url = get_bloginfo('url');
-            $url = get_the_permalink( get_the_ID() );
+         $thumb_url = wp_get_attachment_image_src( get_post_thumbnail_id($colecta->ID), 'thumbnail_size' );
 
-            $thumb_url = wp_get_attachment_image_src( get_post_thumbnail_id(get_page_by_title("Inicio")->ID), 'thumbnail_size' );
-         }
-
-
-      endwhile;
-   endif;
 
    $image = $thumb_url[0];
 
@@ -57,8 +43,6 @@
 
    $mostrar_avisos = true;
 
-   if( is_page("Festival") || is_page("Bandas") || is_page("Información") || $post->post_parent == get_page_by_title("Festival") )
-      $mostrar_avisos = false;
 
 
    ?>

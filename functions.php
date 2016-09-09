@@ -3,9 +3,6 @@
 #el topbar de wp fuera
 add_filter( 'show_admin_bar', '__return_false' );
 
-include_once 'backend/bandas.php';
-include_once 'backend/avisos.php';
-include_once 'backend/url_opcional.php';
 
 include_once 'functions_ajax.php';
 
