@@ -30,7 +30,7 @@
          <a href="<?php echo $woocommerce->cart->get_checkout_url(); ?>" class="w_100 h_5vh columns">
             <button class="button neutral_bd black white_hover columns  fontL font_sm_M white h_a">
                <!-- <a href="#" class="w_100 h_5vh columns"> -->
-               Selecciona tus boletos y después haz click en el botón "Comprar". Cada uno cuesta $200.
+               Selecciona tus boletos
             </button>
          </a>
          <!-- </div> -->
@@ -70,7 +70,6 @@
             <div class="columns h_a small-12 p0 font_sm_XS text-right medium-text-left ">
                CLABE: 014320605514406203
             </div>
-            </div>
             <div class="columns h_a small-12 p0 font_sm_XS text-right medium-text-left ">
                Tarjeta: 5579070048443033
             </div>
@@ -88,7 +87,7 @@
       <div class="absDownR p2 p_sm_1 text-right">
          <span class="p1 font_sm_S">Web:</span>
          <a href="mailto:furenku@gmail.com" target="_blank"><span class="fa fa-envelope fontL white p1"></span></a>
-         <a href="http://github.com/furenku/colecta" target="_blank"><span class="fa fa-github fontL white p1"></span></a>
+         <a href="http://github.com/kernspaltung" target="_blank"><span class="fa fa-github fontL white p1"></span></a>
       </div>
    </div>
 

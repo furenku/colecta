@@ -122,7 +122,7 @@ add_filter('woocommerce_enable_order_notes_field', '__return_false');
 
 
 // Rewrite of "get_the_post_thumbnail" for compatibility with jQuery LazyLoad plugin
-function get_lazyload_thumbnail( $post_id = false, $size = 'full' ) {
+function get_lazyload_thumbnail( $post_id = false, $size = 'post-thumbnail' ) {
 if ( $post_id ) {
 // Get the id of the attachment
 $attachment_id = get_post_thumbnail_id( $post_id );

@@ -90,7 +90,10 @@ $colecta = get_page_by_title("Colecta");
    <h2>Rifa:</h2>
 
    <p class="fontL neutral mt1 mb2">
-      Selecciona tus números. Puedes elegir tantos como quieras.
+      <ol>
+         <li class="fontL font_sm_M">Selecciona tus números. Cada uno cuesta $200. Puedes elegir tantos como quieras.</li>
+         <li class="fontL font_sm_M">Después haz click en el botón "Comprar".</li>
+      </ol>
    </p>
 
    <div id="tickets" class="columns small-12 mt1 p0">

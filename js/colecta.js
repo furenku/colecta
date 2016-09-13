@@ -31,7 +31,7 @@ $(document).ready(function(){
    }
 
 
-
+	console.log("clear cart");
    if( $('#rifa-sidebar').length != 0 )
       clear_cart();
 });
@@ -73,7 +73,6 @@ function setup_utils() {
    var bLazy = new Blazy({
       success: function(img) {
 
-         console.log(img);
          jimg = $(img);
          if(jimg.parent().hasClass('imgLiquid') ){
          if(!jimg.parent().hasClass('imgLiquidNoFill') ){
@@ -295,6 +294,7 @@ console.log( selected_tickets );
    })
 
    var ticket_id = 0;
+   $('#boletos-compra a').unbind('click');
    $('#boletos-compra a').click(function(e){
       console.log("link")
       if( $(this).find('button').hasClass('listo-para-comprar') ) {
