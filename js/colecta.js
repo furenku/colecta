@@ -72,7 +72,6 @@ function setup_utils() {
 
    var bLazy = new Blazy({
       success: function(img) {
-
          jimg = $(img);
          if(jimg.parent().hasClass('imgLiquid') ){
          if(!jimg.parent().hasClass('imgLiquidNoFill') ){
